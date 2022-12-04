@@ -74,12 +74,15 @@ public class createOp extends AppCompatActivity {
     public void save(View v)  {
        if (valor.getText().toString().matches("")) {
            Toast.makeText(this, "Valor está vazio", Toast.LENGTH_SHORT).show();
+           return;
        }
         if (inputData.getText().toString().matches("")) {
             Toast.makeText(this, "A Data está vazia", Toast.LENGTH_SHORT).show();
+            return;
         }
         if (tipoPagamento.getCheckedRadioButtonId() == -1 ) {
             Toast.makeText(this, "Selecione a forma de pagamento", Toast.LENGTH_SHORT).show();
+            return;
         }
 
         Date dateParsed;
