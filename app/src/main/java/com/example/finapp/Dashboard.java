@@ -22,6 +22,8 @@ public class Dashboard extends AppCompatActivity {
     }
 
     public void statement(View v)  {
+        Intent i = new Intent(Dashboard.this, statementList.class);
+        startActivity(i);
     }
 
     public void search(View v)  {
