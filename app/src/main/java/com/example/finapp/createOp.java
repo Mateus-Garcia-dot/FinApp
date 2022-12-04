@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.text.DateFormat;
@@ -41,7 +42,7 @@ public class createOp extends AppCompatActivity {
         filterSpinner = findViewById(R.id.spinnerInputFilter);
 
         spinnerCreditoAdapterArray = new ArrayAdapter<>(this,   R.layout.custom_spinner);
-        spinnerCreditoAdapterArray.add("Salário");
+        spinnerCreditoAdapterArray.add("Salario");
         spinnerCreditoAdapterArray.add("Outros");
         spinnerCreditoAdapterArray.setDropDownViewResource(R.layout.custom_dropdown);
 
@@ -89,9 +90,24 @@ public class createOp extends AppCompatActivity {
             return;
         }
 
+        String radioButtonName;
+        switch (tipoPagamento.getCheckedRadioButtonId()) {
+            case R.id.radioButtonCredito:
+                    radioButtonName = "credito";
+                    break;
+            case R.id.radioButtonMetodoDebito:
+                radioButtonName = "debito";
+                break;
+            default:
+                radioButtonName = "";
+                break;
+        }
+
         ContentValues values = new ContentValues();
         values.put(DatabaseHandler.c1, Integer.parseInt(valor.getText().toString()));
         values.put(DatabaseHandler.c2, dateParsed.getTime());
+        values.put(DatabaseHandler.c3, radioButtonName);
+        values.put(DatabaseHandler.c4, ((TextView) filterSpinner.getSelectedView()).getText().toString());
         long newRowId = db.insert(DatabaseHandler.TABLE_NAME, null, values);
     }
 

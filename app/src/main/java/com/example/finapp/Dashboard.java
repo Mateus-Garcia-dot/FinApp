@@ -28,6 +28,8 @@ public class Dashboard extends AppCompatActivity {
     }
 
     public void orderedList(View v)  {
+        Intent i = new Intent(Dashboard.this, orderedList.class);
+        startActivity(i);
     }
 
     void exit(View v)  {
