@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#222831"
+    tools:context=".createOp"
+    tools:layout_editor_absoluteX="2dp"
+    tools:layout_editor_absoluteY="48dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintTitle"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cadastrar"
+            android:textColor="#EEEEEE"
+            android:textSize="34sp"
+            app:layout_constraintBottom_toTopOf="@+id/lineTitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.794" />
+
+        <View
+            android:id="@+id/lineTitle"
+            android:layout_width="300dp"
+            android:layout_height="1dp"
+            android:layout_marginBottom="28dp"
+            android:background="#00ADB5"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintInputValor"
+        android:layout_width="342dp"
+        android:layout_height="76dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintTitle">
+
+        <TextView
+            android:id="@+id/textInputValor"
+            android:layout_width="70dp"
+            android:layout_height="21dp"
+            android:text="Valor:"
+            android:textColor="#EEEEEE"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/editTextInputValor"
+            app:layout_constraintHorizontal_bias="0.592"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.509" />
+
+        <EditText
+            android:id="@+id/editTextInputValor"
+            android:layout_width="229dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="16dp"
+            android:backgroundTint="#EEEEEE"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:textColor="#EEEEEE"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintInputData"
+        android:layout_width="342dp"
+        android:layout_height="76dp"
+        android:layout_marginTop="44dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintInputValor">
+
+        <TextView
+            android:id="@+id/textInputData"
+            android:layout_width="70dp"
+            android:layout_height="21dp"
+            android:layout_marginStart="16dp"
+            android:text="Data:"
+            android:textColor="#EEEEEE"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.509" />
+
+        <EditText
+            android:id="@+id/editTextInputData"
+            android:layout_width="229dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="27dp"
+            android:layout_marginEnd="16dp"
+            android:backgroundTint="#EEEEEE"
+            android:ems="10"
+            android:inputType="date"
+            android:textColor="#EEEEEE"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/textInputData"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintInputRadioMetodoPagamento"
+        android:layout_width="342dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintInputData">
+
+        <TextView
+            android:id="@+id/textMetodoDePagamento"
+            android:layout_width="254dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="4dp"
+            android:gravity="center_vertical"
+            android:text="Metodo de pagamento:"
+            android:textColor="#EEEEEE"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.181"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RadioGroup
+            android:id="@+id/radioGroupTipoPagamento"
+            android:layout_width="258dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="7dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textMetodoDePagamento">
+
+            <RadioButton
+                android:id="@+id/radioButtonMetodoDebito"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:backgroundTint="#EEEEEE"
+                android:buttonTint="#EEEEEE"
+                android:text="Débito"
+                android:textColor="#EEEEEE"
+                android:textSize="20sp" />
+
+            <RadioButton
+                android:id="@+id/radioButtonCredito"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:buttonTint="#EEEE"
+                android:text="Crédito"
+                android:textColor="#EEEEEE"
+                android:textSize="20sp" />
+
+        </RadioGroup>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintInputFilter"
+        android:layout_width="342dp"
+        android:layout_height="76dp"
+        android:layout_marginTop="36dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintInputRadioMetodoPagamento">
+
+        <TextView
+            android:id="@+id/textInputFilter"
+            android:layout_width="70dp"
+            android:layout_height="21dp"
+            android:layout_marginStart="16dp"
+            android:text="Filtro:"
+            android:textColor="#EEEEEE"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.509" />
+
+        <Spinner
+            android:id="@+id/spinnerInputFilter"
+            style="@style/Widget.AppCompat.Spinner.Underlined"
+            android:layout_width="229dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="11dp"
+            android:layout_marginEnd="16dp"
+            android:backgroundTint="#EEEEEE"
+            android:ems="10"
+            android:inputType="text"
+            android:textColor="#EEEEEE"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/textInputFilter"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="#00ADB5"
+        android:onClick="save"
+        android:text="Salvar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintInputFilter" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
