@@ -45,7 +45,8 @@ public class orderedList extends ListActivity {
         if (cursor.moveToFirst()) {
             while (!cursor.isAfterLast()) {
                 Float valor = cursor.getFloat(cursor.getColumnIndex(DatabaseHandler.c1));
-                int dataMili = cursor.getInt(cursor.getColumnIndex(DatabaseHandler.c2));
+                Long dataMili = cursor.getLong(cursor.getColumnIndex(DatabaseHandler.c2));
+                System.out.println(dataMili);
                 Date dateParsed = new Date(dataMili);
                 String tipo = cursor.getString(cursor.getColumnIndex(DatabaseHandler.c3));
                 String filtro = cursor.getString(cursor.getColumnIndex(DatabaseHandler.c4));

@@ -18,6 +18,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Locale;
 
 public class createOp extends AppCompatActivity {
     EditText valor;
@@ -80,9 +81,10 @@ public class createOp extends AppCompatActivity {
         if (tipoPagamento.getCheckedRadioButtonId() == -1 ) {
             Toast.makeText(this, "Selecione a forma de pagamento", Toast.LENGTH_SHORT).show();
         }
+
         Date dateParsed;
         try {
-            DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+            DateFormat df = new SimpleDateFormat("dd/MM/yyyy", new Locale("pt","BR"));
             df.setLenient(false);
             dateParsed = df.parse(inputData.getText().toString());
         } catch (Exception e) {
