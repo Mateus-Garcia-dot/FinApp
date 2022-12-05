@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/idRLContainer"
     android:layout_width="match_parent"
@@ -11,16 +12,16 @@
 
     <ImageView
         android:id="@+id/idIVLogo"
-        android:layout_width="141dp"
-        android:layout_height="117dp"
+        android:layout_width="233dp"
+        android:layout_height="179dp"
         android:layout_centerInParent="true"
         android:layout_marginStart="25dp"
         android:layout_marginTop="25dp"
         android:layout_marginEnd="25dp"
         android:layout_marginBottom="25dp"
         android:contentDescription="@string/logo"
-        android:src="@drawable/dollar_sign_1_"
-        android:tint="@color/white" />
+        android:src="@drawable/money_foreground"
+        app:tint="@color/white" />
 
     <ProgressBar
         android:id="@+id/idPBLoading"
