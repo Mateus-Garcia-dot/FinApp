@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#222831"
+    tools:context=".createOp"
+    tools:layout_editor_absoluteX="2dp"
+    tools:layout_editor_absoluteY="48dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintTitle"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pesquisar"
+            android:textColor="#EEEEEE"
+            android:textSize="34sp"
+            app:layout_constraintBottom_toTopOf="@+id/lineTitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.794" />>
+
+        <View
+            android:id="@+id/lineTitle"
+            android:layout_width="300dp"
+            android:layout_height="1dp"
+            android:layout_marginBottom="28dp"
+            android:background="#00ADB5"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent" />>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintTitle">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textViewDataInicio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.25"
+                    android:height="45dp"
+                    android:gravity="center|center_vertical"
+                    android:text="Data inicio:"
+                    android:textColor="#EEEEEE"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/editTextDataInico"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.75"
+                    android:backgroundTint="#EEEEEE"
+                    android:ems="10"
+                    android:inputType="date"
+                    android:minHeight="48dp"
+                    android:textColor="#EEEEEE" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.25"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textViewDataFim"
+                    android:layout_width="78dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.25"
+                    android:height="45dp"
+                    android:gravity="center|center_vertical"
+                    android:text="Data Fim:"
+                    android:textColor="#EEEEEE"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/editTextDataFim"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.75"
+                    android:backgroundTint="#EEEEEE"
+                    android:ems="10"
+                    android:inputType="date"
+                    android:minHeight="48dp"
+                    android:textColor="#EEEEEE" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.25"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/TextViewFiltro"
+                    android:layout_width="145dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.25"
+                    android:height="48dp"
+                    android:gravity="center|center_vertical"
+                    android:text="Filtros:"
+                    android:textColor="#EEEEEE"
+                    android:textSize="16sp" />
+
+                <Spinner
+                    android:id="@+id/spinnerFilter"
+                    style="@style/Widget.AppCompat.Spinner.Underlined"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_weight=".75"
+                    android:backgroundTint="#EEEEEE"
+                    android:inputType="date"
+                    android:textColor="#EEEEEE"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/buttonOrderedList"
+                    android:layout_width="180dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/rounded_corner_blue"
+                    android:onClick="searchDateFilter"
+                    android:text="Pesquisar" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ListView
+        android:id="@android:id/list"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

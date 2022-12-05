@@ -45,6 +45,7 @@ public class statementList extends ListActivity {
         header.put("filtro", "FILTRO");
         list.add(header);
 
+
         Cursor cursor = db.rawQuery("select * from " + DatabaseHandler.TABLE_NAME + " ORDER BY " + DatabaseHandler.c2 + " DESC LIMIT 15" ,null);
         if (cursor.moveToFirst()) {
             while (!cursor.isAfterLast()) {

@@ -114,6 +114,7 @@ public class createOp extends AppCompatActivity {
         values.put(DatabaseHandler.c3, radioButtonName);
         values.put(DatabaseHandler.c4, ((TextView) filterSpinner.getSelectedView()).getText().toString());
         long newRowId = db.insert(DatabaseHandler.TABLE_NAME, null, values);
+        Toast.makeText(this, "Inserido com sucesso", Toast.LENGTH_SHORT).show();
     }
 
 }
