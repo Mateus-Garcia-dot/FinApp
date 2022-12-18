@@ -7,20 +7,24 @@ import android.database.sqlite.SQLiteOpenHelper;
 import java.io.File;
 
 public class DatabaseHandler extends SQLiteOpenHelper {
-    public static final String DATABASE_NAME = "financa.db";
+    private static final String DATABASE_NAME = "financa.db";
+    private static final int DB_VERSION = 8;
+
     public static final String TABLE_NAME = "financa";
     public static final String c1 = "value";
     public static final String c2 = "date";
     public static final String c3 = "tipo";
     public static final String c4 = "filtro";
 
+    private static final String DB_CREATE = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME + "(id INTEGER primary key autoincrement, value REAL, date BIGINT, tipo TEXT, filtro TEXT)";
+
+
     public DatabaseHandler(Context context) {
-        super(context, DATABASE_NAME, null, 8);
+        super(context, DATABASE_NAME, null, DB_VERSION);
     }
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        String createTable = "CREATE TABLE " + TABLE_NAME + "(id INTEGER primary key autoincrement, value REAL, date BIGINT, tipo TEXT, filtro TEXT)";
-        sqLiteDatabase.execSQL(createTable);
+         sqLiteDatabase.execSQL(DB_CREATE);
     }
 
     @Override

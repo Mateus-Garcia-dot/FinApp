@@ -36,7 +36,7 @@ public class Dashboard extends AppCompatActivity {
         startActivity(i);
     }
 
-    void exit(View v)  {
+    public void exit(View v)  {
         finish();
     }
 
