@@ -42,16 +42,16 @@ public class createOp extends AppCompatActivity {
         tipoPagamento = findViewById(R.id.radioGroupTipoPagamento);
         filterSpinner = findViewById(R.id.spinnerInputFilter);
 
-        spinnerCreditoAdapterArray = new ArrayAdapter<>(this,   R.layout.custom_spinner);
-        spinnerCreditoAdapterArray.add("Salario");
-        spinnerCreditoAdapterArray.add("Outros");
-        spinnerCreditoAdapterArray.setDropDownViewResource(R.layout.custom_dropdown);
-
         spinnerDebitoAdapterArray = new ArrayAdapter<>(this,   R.layout.custom_spinner);
-        spinnerDebitoAdapterArray.add("Moradia");
-        spinnerDebitoAdapterArray.add("Saúde");
+        spinnerDebitoAdapterArray.add("Salario");
         spinnerDebitoAdapterArray.add("Outros");
         spinnerDebitoAdapterArray.setDropDownViewResource(R.layout.custom_dropdown);
+
+        spinnerCreditoAdapterArray = new ArrayAdapter<>(this,   R.layout.custom_spinner);
+        spinnerCreditoAdapterArray.add("Moradia");
+        spinnerCreditoAdapterArray.add("Saúde");
+        spinnerCreditoAdapterArray.add("Outros");
+        spinnerCreditoAdapterArray.setDropDownViewResource(R.layout.custom_dropdown);
 
         tipoPagamento.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override

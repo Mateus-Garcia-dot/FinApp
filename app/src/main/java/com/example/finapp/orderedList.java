@@ -45,11 +45,15 @@ public class orderedList extends ListActivity {
         Cursor cursor = db.rawQuery("select * from " + DatabaseHandler.TABLE_NAME + " ORDER BY " + DatabaseHandler.c3 + " DESC" ,null);
         if (cursor.moveToFirst()) {
             while (!cursor.isAfterLast()) {
-                Float valor = cursor.getFloat(cursor.getColumnIndex(DatabaseHandler.c1));
-                Long dataMili = cursor.getLong(cursor.getColumnIndex(DatabaseHandler.c2));
+                Float valor = cursor.getFloat(
+                        Math.max(cursor.getColumnIndex(DatabaseHandler.c1), 0));
+                Long dataMili = cursor.getLong(
+                        Math.max(cursor.getColumnIndex(DatabaseHandler.c2), 0));
                 Date dateParsed = new Date(dataMili);
-                String tipo = cursor.getString(cursor.getColumnIndex(DatabaseHandler.c3));
-                String filtro = cursor.getString(cursor.getColumnIndex(DatabaseHandler.c4));
+                String tipo = cursor.getString(
+                        Math.max(cursor.getColumnIndex(DatabaseHandler.c3), 0));
+                String filtro = cursor.getString(
+                        Math.max(cursor.getColumnIndex(DatabaseHandler.c4), 0));
 
                 HashMap<String,String> temp = new HashMap<String,String>();
                 temp.put("valor", valor.toString());
